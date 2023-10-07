@@ -1,6 +1,6 @@
 import styles from './App.module.scss'
 
-function App() {
+const App = () => {
   return (
     <div className={styles.app_container}>
       <div className={styles.header}></div>
