@@ -1,31 +1,10 @@
-:root {
-  --core-gunmetal: #143642;
-  --core-celestial-blue: #39a0ed;
-  --core-timberwolf: #dad2d8;
-  --core-flash-white: #eff1f3;
-  --core-auburn: #a62639;
-  --core-syracuse-orange: #d45113;
-  --core-xanthous: #ffbf46;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Britannic Bold", sans-serif;
-  font-weight: normal;
-}
-
-body {
-  background-color: var(--core-flash-white);
-}
-
 .app_container {
   display: grid;
   grid-template-columns: 1fr minmax(360px, 500px) 1fr;
   grid-template-rows: 50px 1fr;
   grid-template-areas:
-          "header header  header"
-          ".      main    .";
+    "header header  header"
+    ".      main    .";
   height: 100vh;
 }
 
