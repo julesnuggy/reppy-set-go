@@ -10,7 +10,12 @@ const App = () => {
         <h1>Reppy, Set, Go!</h1>
         <img className={styles.icon} src={weightlifter} alt='weightlifter-user-account' />
       </header>
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <h2>Manage Workout</h2>
+        <div>Placeholder 1</div>
+        <div>Placeholder 2</div>
+        <div>Placeholder 3</div>
+      </main>
     </div>
   )
 }
