@@ -1,12 +1,6 @@
 import Button from '../components/Button';
+import { Workout } from '../interfaces/Workout';
 import styles from './ManageWorkouts.module.scss';
-
-type Workout = {
-  date: Date;
-  name: string
-  rating: number;
-  routine: string;
-}
 
 type HistoryProps = {
   workout: Workout;
