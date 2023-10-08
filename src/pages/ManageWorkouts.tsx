@@ -1,49 +1,11 @@
 import Button from '../components/Button';
+import { FAKE_WORKOUTS } from '../fake_data';
 import { Workout } from '../interfaces/Workout';
 import styles from './ManageWorkouts.module.scss';
 
 type HistoryProps = {
   workout: Workout;
 }
-
-const FAKE_DATA: Workout[] = [
-  {
-    date: new Date(2023, 9, 13),
-    name: 'Arms and chest',
-    rating: 3,
-    routine: 'One-Off'
-  },
-  {
-    date: new Date(2023, 9, 11),
-    name: 'Core',
-    rating: 4,
-    routine: '5-Way Split'
-  },
-  {
-    date: new Date(2023, 9, 8),
-    name: 'Legs',
-    rating: 5,
-    routine: '5-Way Split'
-  },
-  {
-    date: new Date(2023, 9, 1),
-    name: 'Back',
-    rating: 2,
-    routine: '5-Way Split'
-  },
-  {
-    date: new Date(2023, 8, 29),
-    name: 'Chest',
-    rating: 3,
-    routine: '5-Way Split'
-  },
-  {
-    date: new Date(2023, 8, 28),
-    name: 'Arms',
-    rating: 4,
-    routine: '5-Way Split'
-  }
-];
 
 const HistoryButton = ({ workout }: HistoryProps) => {
   const starRating = '★'.repeat(workout.rating) + '☆'.repeat((5 - workout.rating));
@@ -64,7 +26,7 @@ const ManageWorkouts = () => {
       <h2 className={styles.title}>Manage Workouts</h2>
       <Button className={styles.start}>Start New Workout</Button>
       <p className={styles.info_text}>Click/Tap on an exercise below to view/edit it.</p>
-      {FAKE_DATA.map((workout) => <HistoryButton key={`${workout.date}_${workout.name}`} workout={workout} />)}
+      {FAKE_WORKOUTS.map((workout) => <HistoryButton key={`${workout.date}_${workout.name}`} workout={workout} />)}
     </div>
   );
 };
