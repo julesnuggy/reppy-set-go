@@ -20,7 +20,35 @@
     }
 
     &.history {
+      display: grid;
+      grid-template-columns: 70px 175px;
+      grid-template-rows: 1fr 1fr;
+      column-gap: 5px;
       background-color: var(--core-flash-white);
+      place-items: center;
+
+      p {
+        font-size: 16px;
+        font-family: "Calibri", sans-serif;
+
+        &.date {
+          font-size: 12px;
+          color: var(--core-gunmetal);
+        }
+
+        &.rating {
+          font-size: 12px;
+        }
+
+        &.routine {
+          color: var(--core-gunmetal);
+
+        }
+
+        &.name {
+          color: var(--core-celestial-blue);
+        }
+      }
     }
   }
 
