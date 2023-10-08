@@ -49,17 +49,5 @@ body {
 
 .main {
   grid-area: main;
-  display: grid;
   background-color: var(--core-timberwolf);
-  grid-template-rows: 40px repeat(auto-fit, minmax(50px, 1fr));
-  place-items: center;
-  row-gap: 10px;
-
-  h2 {
-    font-size: 22px;
-    font-weight: normal;
-    color: var(--core-celestial-blue);
-    text-transform: capitalize;
-    font-variant: small-caps;
-  }
 }

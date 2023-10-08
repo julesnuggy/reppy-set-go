@@ -1,5 +1,6 @@
 import barbell from './assets/icons/barbell-red.svg';
 import weightlifter from './assets/icons/weightlifter.svg';
+import ManageWorkouts from './pages/ManageWorkouts';
 import styles from './App.module.scss';
 
 const App = () => {
@@ -11,10 +12,7 @@ const App = () => {
         <img className={styles.icon} src={weightlifter} alt="weightlifter-user-account" />
       </header>
       <main className={styles.main}>
-        <h2>Manage Workout</h2>
-        <div>Placeholder 1</div>
-        <div>Placeholder 2</div>
-        <div>Placeholder 3</div>
+        <ManageWorkouts />
       </main>
     </div>
   );
