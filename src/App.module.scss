@@ -11,6 +11,9 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
   background-color: var(--core-flash-white);
 }
 
@@ -26,7 +29,22 @@
 
 .header {
   grid-area: header;
+  display: grid;
   background-color: var(--core-gunmetal);
+  grid-template-columns: 50px 1fr 50px;
+  place-items: center;
+
+  h1 {
+    font-family: "Britannic Bold", sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+    color: var(--core-flash-white);
+  }
+
+  .icon {
+    height: 40px;
+    cursor: pointer;
+  }
 }
 
 .main {
