@@ -5,10 +5,10 @@ import styles from './ManageWorkouts.module.scss';
 
 type HistoryProps = {
   workout: Workout;
-}
+};
 
 const HistoryButton = ({ workout }: HistoryProps) => {
-  const starRating = '★'.repeat(workout.rating) + '☆'.repeat((5 - workout.rating));
+  const starRating = '★'.repeat(workout.rating) + '☆'.repeat(5 - workout.rating);
 
   return (
     <Button className={styles.history}>
@@ -26,7 +26,9 @@ const ManageWorkouts = () => {
       <h2 className={styles.title}>Manage Workouts</h2>
       <Button className={styles.start}>Start New Workout</Button>
       <p className={styles.info_text}>Click/Tap on an exercise below to view/edit it.</p>
-      {FAKE_WORKOUTS.map((workout) => <HistoryButton key={`${workout.date}_${workout.name}`} workout={workout} />)}
+      {FAKE_WORKOUTS.map((workout) => (
+        <HistoryButton key={`${workout.date.toLocaleDateString()}_${workout.name}`} workout={workout} />
+      ))}
     </div>
   );
 };
