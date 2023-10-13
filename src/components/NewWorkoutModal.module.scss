@@ -1,0 +1,23 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 280px;
+  max-width: 460px;
+  width: calc(100vw - 150px);
+  min-height: 200px;
+  max-height: 600px;
+  height: calc(100vh - 100px);
+  padding: 20px;
+  background-color: var(--core-flash-white);
+  transform: translateX(-50%) translateY(-50%);
+}
