@@ -1,6 +1,6 @@
 interface Workout {
   date: Date;
-  name: string
+  name: string;
   rating: number;
   routine: string;
 }
