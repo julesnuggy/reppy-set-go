@@ -2,9 +2,9 @@ import { ReactElement } from 'react';
 import styles from './Button.module.scss';
 
 type ButtonProps = {
-  children: ReactElement;
-  className: string;
+  children: ReactElement | string;
   onClick: () => void;
+  className?: string;
 };
 
 const Button = ({ children, className, onClick }: ButtonProps): ReactElement => (
