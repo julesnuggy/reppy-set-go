@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import Button from '../components/Button';
 import NewWorkoutModal from '../components/NewWorkoutModal';
 import { FAKE_WORKOUTS } from '../fake_data';
@@ -23,12 +23,18 @@ const HistoryButton = ({ workout }: HistoryProps): ReactElement => {
 };
 
 const ManageWorkouts = (): ReactElement => {
+  const [isModalShown, setIsModalShown] = useState<boolean>(false);
+
+  const showModal = (): void => {
+    setIsModalShown(true);
+  };
+
   return (
     <div>
-      <NewWorkoutModal isShown={true}></NewWorkoutModal>
+      <NewWorkoutModal isShown={isModalShown}></NewWorkoutModal>
       <div className={styles.container}>
         <h2 className={styles.title}>Manage Workouts</h2>
-        <Button className={styles.start}>Start New Workout</Button>
+        <Button className={styles.start} onClick={showModal}>Start New Workout</Button>
         <p className={styles.info_text}>Click/Tap on an exercise below to view/edit it.</p>
         {FAKE_WORKOUTS.map((workout) => (
           <HistoryButton key={`${workout.date.toLocaleDateString()}_${workout.name}`} workout={workout} />
