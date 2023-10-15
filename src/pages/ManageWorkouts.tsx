@@ -29,9 +29,13 @@ const ManageWorkouts = (): ReactElement => {
     setIsModalShown(true);
   };
 
+  const hideModal = (): void => {
+    setIsModalShown(false);
+  };
+
   return (
     <div>
-      <NewWorkoutModal isShown={isModalShown}></NewWorkoutModal>
+      <NewWorkoutModal isShown={isModalShown} hideModal={hideModal} ></NewWorkoutModal>
       <div className={styles.container}>
         <h2 className={styles.title}>Manage Workouts</h2>
         <Button className={styles.start} onClick={showModal}>Start New Workout</Button>

@@ -21,9 +21,30 @@
   min-height: 200px;
   max-height: 600px;
   height: calc(100vh - 100px);
-  padding: 20px;
+  padding: 10px 20px;
   background-color: var(--core-flash-white);
   transform: translateX(-50%) translateY(-50%);
+
+  div {
+    margin-bottom: 10px;
+  }
+}
+
+.buttonContainer {
+  display: grid;
+
+  .closeButton {
+    position: relative;
+    left: 10px;
+    justify-self: end;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--core-syracuse-orange);
+    color: var(--core-flash-white);
+    font-size: 14px;
+  }
 }
 
 .config {
@@ -36,7 +57,6 @@
     display: grid;
     column-gap: 5px;
     align-items: center;
-    margin-bottom: 10px;
   }
 
   &__name {
