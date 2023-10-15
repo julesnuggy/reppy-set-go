@@ -48,15 +48,23 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
 
-  .closeButton {
-    position: relative;
-    left: 10px;
+  .modalButton {
     justify-self: end;
-    height: 50px;
     padding: 0;
-    background-color: var(--core-syracuse-orange);
-    color: var(--core-flash-white);
     font-size: 14px;
+    width: 100%;
+
+    &__cancelButton {
+      @extend .modalButton;
+      background-color: var(--core-syracuse-orange);
+      color: var(--core-flash-white);
+    }
+
+    &__saveButton {
+      @extend .modalButton;
+      background-color: var(--extra-forest);
+      color: var(--core-flash-white);
+    }
   }
 }
 

@@ -57,7 +57,8 @@ const NewWorkoutModal = ({ isShown, hideModal }: ModalProps): ReactElement => {
         </div>
 
         <div className={styles.buttonContainer}>
-          <Button onClick={handleHide} className={styles.closeButton}>CANCEL</Button>
+          <Button onClick={handleHide} className={styles.modalButton__cancelButton}>CANCEL</Button>
+          <Button onClick={() => {}} className={styles.modalButton__saveButton}>SAVE</Button>
         </div>
       </div>
     </Modal>
