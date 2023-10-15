@@ -26,11 +26,24 @@ const NewWorkoutModal = ({ isShown, hideModal }: ModalProps): ReactElement => {
     return DAYS_OF_WEEK[dayIndex].slice(0, 3);
   };
 
+  const handleShow = () => {
+    const modal = document.querySelector(`.${styles.modal}`);
+    setTimeout(() => {
+      modal.classList.add(styles.modal__opened);
+    }, 1)
+  }
+
+  const handleHide = () => {
+    const modal = document.querySelector(`.${styles.modal}`);
+    modal.classList.add(styles.modal__closing);
+    setTimeout(hideModal, 500);
+  }
+
   return (
-    <Modal show={isShown} onHide={hideModal} renderBackdrop={BackDrop}>
+    <Modal show={isShown} onHide={handleHide} onShow={handleShow} renderBackdrop={BackDrop}>
       <div className={styles.modal}>
         <div className={styles.buttonContainer}>
-          <Button onClick={hideModal} className={styles.closeButton}>X</Button>
+          <Button onClick={handleHide} className={styles.closeButton}>X</Button>
         </div>
 
         <div className={styles.config}>

@@ -15,15 +15,28 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  min-width: 280px;
-  max-width: 460px;
-  width: calc(100vw - 150px);
-  min-height: 200px;
-  max-height: 600px;
-  height: calc(100vh - 100px);
+  min-height: auto;
+  height: 0;
+  opacity: 0;
   padding: 10px 20px;
   background-color: var(--core-flash-white);
   transform: translateX(-50%) translateY(-50%);
+  transition: opacity 0.5s, height 0.5s;
+
+  &__opened {
+    min-width: 280px;
+    max-width: 460px;
+    width: calc(100vw - 150px);
+    min-height: 200px;
+    max-height: 600px;
+    height: calc(100vh - 100px);
+    opacity: 1;
+  }
+
+  &__closing {
+    height: 0;
+    opacity: 0;
+  }
 
   div {
     margin-bottom: 10px;
