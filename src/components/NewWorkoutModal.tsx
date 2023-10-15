@@ -42,10 +42,6 @@ const NewWorkoutModal = ({ isShown, hideModal }: ModalProps): ReactElement => {
   return (
     <Modal show={isShown} onHide={handleHide} onShow={handleShow} renderBackdrop={BackDrop}>
       <div className={styles.modal}>
-        <div className={styles.buttonContainer}>
-          <Button onClick={handleHide} className={styles.closeButton}>X</Button>
-        </div>
-
         <div className={styles.config}>
           <div className={styles.config__name}>
             <label htmlFor="workout-name">Name:</label>
@@ -58,6 +54,10 @@ const NewWorkoutModal = ({ isShown, hideModal }: ModalProps): ReactElement => {
             <input id="workout-date" type="date" value={workoutDate} onChange={(e) => setWorkoutDate(e.target.value)} />
             <button onClick={handleClick}>Today</button>
           </div>
+        </div>
+
+        <div className={styles.buttonContainer}>
+          <Button onClick={handleHide} className={styles.closeButton}>CANCEL</Button>
         </div>
       </div>
     </Modal>
