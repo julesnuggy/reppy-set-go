@@ -1,3 +1,7 @@
+:root {
+  --prop-width: 45px;
+}
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -20,4 +24,30 @@
   padding: 20px;
   background-color: var(--core-flash-white);
   transform: translateX(-50%) translateY(-50%);
+}
+
+.config {
+  input {
+    padding: 3px;
+    text-align: center;
+  }
+
+  &__name, &__date {
+    display: grid;
+    column-gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    grid-template-columns: minmax(auto, var(--prop-width)) 1fr;
+  }
+
+  &__date {
+    grid-template-columns: minmax(auto, var(--prop-width)) 30px minmax(125px, 1fr) minmax(50px, 100px);
+
+    & button {
+      height: 100%;
+    }
+  }
 }
