@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 import styles from './Button.module.scss';
 
 type ButtonProps = {
-  children: ReactNode;
+  children: ReactElement;
   className: string;
 };
 
-const Button = ({ children, className }: ButtonProps) => (
+const Button = ({ children, className }: ButtonProps): ReactElement => (
   <button className={`${styles.button} ${className}`}>{children}</button>
 );
 

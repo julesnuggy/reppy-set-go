@@ -1,25 +1,26 @@
 import { Modal } from '@restart/ui';
-import { useState } from 'react';
+import { RenderModalBackdropProps } from '@restart/ui/Modal';
+import { ReactElement, useState } from 'react';
 import styles from './NewWorkoutModal.module.scss';
 
 type ModalProps = {
   isShown: boolean;
 };
 
-const DAYS_OF_WEEK = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const DAYS_OF_WEEK: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-const BackDrop = (props) => <div {...props} className={styles.backdrop} />;
+const BackDrop = ({ props }: RenderModalBackdropProps): ReactElement => <div {...props} className={styles.backdrop} />;
 
-const NewWorkoutModal = ({ isShown }: ModalProps) => {
-  const todayString = new Date().toISOString().substring(0, 10);
-  const [workoutDate, setWorkoutDate] = useState(todayString);
+const NewWorkoutModal = ({ isShown }: ModalProps): ReactElement => {
+  const todayString: string = new Date().toISOString().substring(0, 10);
+  const [workoutDate, setWorkoutDate] = useState<string>(todayString);
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     setWorkoutDate(todayString);
   };
 
-  const getWorkoutDay = () => {
-    const dayIndex = new Date(workoutDate).getDay();
+  const getWorkoutDay = (): string => {
+    const dayIndex: number = new Date(workoutDate).getDay();
     return DAYS_OF_WEEK[dayIndex].slice(0, 3);
   };
 

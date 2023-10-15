@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import Button from '../components/Button';
 import NewWorkoutModal from '../components/NewWorkoutModal';
 import { FAKE_WORKOUTS } from '../fake_data';
@@ -8,8 +9,8 @@ type HistoryProps = {
   workout: Workout;
 };
 
-const HistoryButton = ({ workout }: HistoryProps) => {
-  const starRating = '★'.repeat(workout.rating) + '☆'.repeat(5 - workout.rating);
+const HistoryButton = ({ workout }: HistoryProps): ReactElement => {
+  const starRating: string = '★'.repeat(workout.rating) + '☆'.repeat(5 - workout.rating);
 
   return (
     <Button className={styles.history}>
@@ -21,7 +22,7 @@ const HistoryButton = ({ workout }: HistoryProps) => {
   );
 };
 
-const ManageWorkouts = () => {
+const ManageWorkouts = (): ReactElement => {
   return (
     <div>
       <NewWorkoutModal isShown={true}></NewWorkoutModal>

@@ -1,9 +1,10 @@
+import { ReactElement } from 'react';
 import barbell from './assets/icons/barbell-red.svg';
 import weightlifter from './assets/icons/weightlifter.svg';
 import ManageWorkouts from './pages/ManageWorkouts';
 import styles from './App.module.scss';
 
-const App = () => {
+const App = (): ReactElement => {
   return (
     <div className={styles.app_container}>
       <header className={styles.header}>
